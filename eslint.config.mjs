@@ -1,4 +1,3 @@
-// eslint.config.js
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
@@ -6,6 +5,7 @@ import pluginTS from "@typescript-eslint/eslint-plugin";
 import parserTS from "@typescript-eslint/parser";
 import pluginReact from "eslint-plugin-react";
 import pluginReactHooks from "eslint-plugin-react-hooks";
+import pluginNext from "eslint-plugin-next";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -14,16 +14,29 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-export default [
+const eslintConfig = [
   ...compat.extends(
+    "next",
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
+    "plugin:next/recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
-    "plugin:prettier/recommended",
+    "plugin:prettier/recommended"
   ),
+
+  // Ignore arquivos/folders inteiros
+  {
+    ignores: [
+      "node_modules/**",
+      ".next/**",
+      "out/**",
+      "**/*.mjs",
+      "src/assets/jsm/BlurGradientBg.module.js",
+    ],
+  },
 
   {
     files: ["**/*.ts", "**/*.tsx"],
@@ -42,6 +55,8 @@ export default [
         "warn",
         { argsIgnorePattern: "^_" },
       ],
+      "@typescript-eslint/no-unused-expressions": "off",
+      "@typescript-eslint/no-this-alias": "off",
     },
   },
 
@@ -50,9 +65,10 @@ export default [
     plugins: {
       react: pluginReact,
       "react-hooks": pluginReactHooks,
+      next: pluginNext,
     },
     rules: {
-      "react/react-in-jsx-scope": "off", // Next.js doesn't require it
+      "react/react-in-jsx-scope": "off", // Next.js não exige mais
       "react/jsx-uses-react": "off",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
@@ -82,3 +98,5 @@ export default [
     },
   },
 ];
+
+export default eslintConfig;
