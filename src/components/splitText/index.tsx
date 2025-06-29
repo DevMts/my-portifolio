@@ -1,4 +1,6 @@
-import React, { useRef, useEffect } from "react";
+"use client";
+
+import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText as GSAPSplitText } from "gsap/SplitText";
@@ -42,12 +44,15 @@ const SplitText: React.FC<SplitTextProps> = ({
   const ref = useRef<HTMLParagraphElement>(null);
   const animationCompletedRef = useRef(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = ref.current;
     if (!el || animationCompletedRef.current) return;
 
     const absoluteLines = splitType === "lines";
     if (absoluteLines) el.style.position = "relative";
+
+    // ⚠️ Reinicia o conteúdo manualmente antes do SplitText
+    el.innerHTML = `${text} <span><span class="block lg:inline">${text2}</span></span>`;
 
     const splitter = new GSAPSplitText(el, {
       type: splitType,
@@ -55,7 +60,7 @@ const SplitText: React.FC<SplitTextProps> = ({
       linesClass: "split-line",
     });
 
-    let targets: Element[];
+    let targets: Element[] = [];
     switch (splitType) {
       case "lines":
         targets = splitter.lines;
@@ -70,8 +75,16 @@ const SplitText: React.FC<SplitTextProps> = ({
         targets = splitter.chars;
     }
 
+    // 🖌️ Estilo gradiente em cada letra
     targets.forEach((t) => {
-      (t as HTMLElement).style.willChange = "transform, opacity";
+      const el = t as HTMLElement;
+      el.style.willChange = "transform, opacity";
+      el.style.backgroundImage =
+        "linear-gradient(to bottom, #e6e6e6 0%, #c5c5c5 100%)";
+      el.style.webkitBackgroundClip = "text";
+      el.style.backgroundClip = "text";
+      el.style.webkitTextFillColor = "transparent";
+      el.style.color = "transparent";
     });
 
     const startPct = (1 - threshold) * 100;
@@ -116,6 +129,7 @@ const SplitText: React.FC<SplitTextProps> = ({
     };
   }, [
     text,
+    text2,
     delay,
     duration,
     ease,
@@ -134,14 +148,8 @@ const SplitText: React.FC<SplitTextProps> = ({
       style={{
         textAlign,
         wordWrap: "break-word",
-        backgroundImage: "linear-gradient(to bottom, #e6e6e6 0%, #c5c5c5 100%)",
       }}
-    >
-      {text}{" "}
-      <span>
-        <span className="block lg:inline"> {text2}</span>
-      </span>
-    </p>
+    />
   );
 };
 

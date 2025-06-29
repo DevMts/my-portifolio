@@ -5,6 +5,10 @@ import Image from "next/image";
 import oak from "@/assets/oak.svg";
 import { useLiveTime } from "@/hooks/useLiveTime";
 import { useScrollTop } from "@/hooks/useScrollTop";
+import { Geist, Lato } from "next/font/google";
+
+const geist = Geist({ subsets: ["latin"] });
+const lato = Lato({ weight: "400", subsets: ["latin"] });
 
 export function NavBar() {
   const [hasMounted, setHasMounted] = useState(false);
@@ -81,7 +85,8 @@ export function NavBar() {
             <a
               key={item.name}
               href={item.href}
-              className="hover:text-main-opacity flex w-fit items-center gap-4 p-1 pl-0 text-xl text-white transition-all duration-200"
+              className={`${geist.className} hover:text-main-opacity flex w-fit items-center gap-4 p-1 pl-0 text-xl text-white transition-all duration-200`}
+
             >
               {item.name}
               {index !== 5 && (
@@ -92,7 +97,7 @@ export function NavBar() {
         </nav>
 
         {/* Botão hamburguer (mobile) */}
-        <button onClick={handleClick} className="background size-6 lg:hidden">
+        <button onClick={handleClick} className="background size-6 lg:hidden" aria-label="Abrir menu">
           <div className="relative flex size-full flex-col items-end justify-center gap-1">
             <span
               className={`bg-main h-0.5 w-2/4 rounded transition-all duration-200 ${isMenuOpen && "absolute w-full rotate-45"} `}
@@ -108,7 +113,7 @@ export function NavBar() {
 
         {/* Navegação e horário (desktop) */}
         <div className="text-main-opacity hidden flex-col items-end lg:flex">
-          <span className="flex items-center">
+          <span className={`${lato.className} flex items-center`}>
             <span className="bg-main shadow-main mr-2 inline-block size-1 animate-pulse rounded shadow-[0_0_3px_2px_rgba(255,255,255,0.8)]"></span>
             {timeString}
           </span>
@@ -117,7 +122,7 @@ export function NavBar() {
       </div>
 
       <nav
-        className={`w-full flex-col overflow-hidden transition-all duration-200 ${isMenuOpen ? "mt-6 flex min-h-50" : "max-h-0 opacity-0"}`}
+        className={`w-full flex-col ${isHovered ? "lg:hidden" : !isAtTop ? "" : "lg:hidden"} overflow-hidden transition-all duration-200 ${isMenuOpen ? "mt-6 flex min-h-50" : "max-h-0 opacity-0"}`}
       >
         {[
           {
@@ -149,6 +154,7 @@ export function NavBar() {
             key={item.name}
             href={item.href}
             className="hover:text-main-opacity w-fit p-1 pl-0 text-base text-white transition-all duration-200"
+            onClick={handleClick}
           >
             {item.name}
           </a>

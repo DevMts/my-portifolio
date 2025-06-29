@@ -28,14 +28,18 @@ export function Hero() {
     console.log("All letters have animated!");
   };
   return (
-    <section className="relative h-[100dvh] min-h-87.5 overflow-hidden">
+    <section className="relative h-[100dvh] min-h-150 overflow-hidden">
       <div id="box" className="absolute inset-0 -z-10" />
 
-      <Container className="z-10 flex h-full min-h-150 flex-col items-center justify-center">
+      <Container
+        className="z-10 flex h-full max-w-7xl flex-col items-center justify-center"
+        id="home"
+      >
         <SplitText
+          key={1}
           text="Front-End"
           text2="& UX Design"
-          className={`bg-clip-text text-center text-5xl/[130%] font-semibold text-white md:text-7xl lg:text-8xl/[130%]`}
+          className={`bg-clip-text text-center text-5xl/[130%] font-semibold text-transparent md:text-7xl lg:text-8xl/[130%]`}
           delay={100}
           duration={0.6}
           ease="power3.out"
