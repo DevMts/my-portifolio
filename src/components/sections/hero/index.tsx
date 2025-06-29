@@ -28,10 +28,10 @@ export function Hero() {
     console.log("All letters have animated!");
   };
   return (
-    <section className="relative h-screen min-h-87.5 overflow-hidden">
+    <section className="relative h-[100dvh] min-h-87.5 overflow-hidden">
       <div id="box" className="absolute inset-0 -z-10" />
 
-      <Container className="z-10 flex h-[100dvh] min-h-87.5 flex-col items-center justify-center">
+      <Container className="z-10 flex h-full min-h-150 flex-col items-center justify-center">
         <SplitText
           text="Front-End"
           text2="& UX Design"
