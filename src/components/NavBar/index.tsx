@@ -39,7 +39,7 @@ export function NavBar() {
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`border-main-opacity fixed top-8 left-1/2 mb-[150rem] flex min-h-18 w-9/10 max-w-289 -translate-x-1/2 flex-col items-center justify-start rounded-[36px] border px-8 py-4.5 backdrop-blur-xl transition-all duration-500 ease-out lg:h-18 ${isHovered ? "lg:w-full" : !isAtTop ? "lg:w-fit lg:scale-75" : "lg:w-full"} `}
+      className={`border-main-opacity fixed top-8 left-1/2 z-1000 flex min-h-18 w-9/10 max-w-256 -translate-x-1/2 flex-col items-center justify-start rounded-[36px] border px-8 py-4.5 backdrop-blur-xl transition-all duration-500 ease-out lg:h-18 ${isHovered ? "lg:w-full" : !isAtTop ? "lg:w-fit lg:scale-75" : "lg:w-full"} `}
     >
       <div className="flex h-full w-full items-center justify-between">
         <Image
@@ -109,7 +109,7 @@ export function NavBar() {
         {/* Navegação e horário (desktop) */}
         <div className="text-main-opacity hidden flex-col items-end lg:flex">
           <span className="flex items-center">
-            <span className="bg-main shadow-main mr-2 inline-block size-1 rounded shadow-2xl"></span>
+            <span className="bg-main shadow-main mr-2 inline-block size-1 animate-pulse rounded shadow-[0_0_3px_2px_rgba(255,255,255,0.8)]"></span>
             {timeString}
           </span>
           <span>{dateString}</span>

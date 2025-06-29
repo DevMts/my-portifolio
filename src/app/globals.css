@@ -3,6 +3,7 @@
 :root {
   --main: #f0f8ff;
   --main-opacity: #f0f8ff80;
+  --text-primary: #ededed;
   --details-black: #111111;
   --text-second: #888888;
   --linear: linear-gradient(to right, #e6e6e6 0%, #c5c5c5 100%);
@@ -11,10 +12,11 @@
 
 @theme inline {
   --color-main: var(--main);
+  --color-primary: var(--text-primary);
   --color-main-opacity: var(--main-opacity);
   --color-details: var(--details-black);
   --color-second: var(--text-second);
-  --linear: var(--linear);
+  --color-linear: var(--linear);
   --white: var(--white);
 }
 

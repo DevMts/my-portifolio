@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { CustomCursor } from "@/components/Cursor";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,7 +14,55 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`bg-black antialiased`}>{children}</body>
+      <head>
+        <style>{`
+          #global-loader {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #111;
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+          }
+          .loader {
+            width: 2.5rem;
+            height: 2.5rem;
+            border: 4px solid #f0f8ff;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+          }
+          @keyframes spin {
+            to { transform: rotate(360deg); }
+          }
+        `}</style>
+      </head>
+      <body className={`bg-black antialiased`}>
+        {/* Loader que aparece antes da hidratação */}
+        <div id="global-loader">
+          <div className="loader"></div>
+        </div>
+
+        <CustomCursor />
+        {children}
+
+        {/* Script para remover o loader após a carga */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.addEventListener('load', () => {
+                const loader = document.getElementById('global-loader');
+                if (loader) {
+                  loader.style.opacity = '0';
+                  setTimeout(() => loader.remove(), 300);
+                }
+              });
+            `,
+          }}
+        />
+      </body>
     </html>
   );
 }
