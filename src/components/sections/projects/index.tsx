@@ -66,6 +66,7 @@ export function Projects() {
         <div className="relative flex items-end justify-center rounded-lg border border-white p-9">
           <Image
             src={constructor}
+            unoptimized
             alt="constructor"
             className="absolute top-1/2 left-1/2 w-105 -translate-x-1/2 -translate-y-1/2 object-cover"
           />
@@ -76,11 +77,13 @@ export function Projects() {
           title="Five - Landing Page"
           grid={2}
           demo="https://landing-page-meditation.vercel.app/"
+          github="https://github.com/DevMts/landing-page-meditation"
         />
 
         <div className="relative col-span-2 row-start-2 flex items-end justify-center rounded-lg border border-white p-9">
           <Image
             src={constructor}
+            unoptimized
             alt="constructor"
             className="absolute top-1/2 left-1/2 h-full w-105 -translate-x-1/2 -translate-y-1/2 border border-t-white object-cover"
           />
