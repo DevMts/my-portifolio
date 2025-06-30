@@ -28,7 +28,7 @@ export function Hero() {
     console.log("All letters have animated!");
   };
   return (
-    <section className="relative h-[100dvh] min-h-150 overflow-hidden">
+    <section className="relative h-[100svh] min-h-150 overflow-hidden">
       <div id="box" className="absolute inset-0 -z-10" />
 
       <Container
@@ -59,8 +59,12 @@ export function Hero() {
           cada detalhe do projeto.
         </p>
         <div className="mx-auto mt-16 flex gap-5">
-          <Button type="primary">Projetos</Button>
-          <Button type="secondary">Sobre mim</Button>
+          <Button type="primary" link="#projects">
+            Projetos
+          </Button>
+          <Button type="secondary" link="#about">
+            Sobre mim
+          </Button>
         </div>
       </Container>
     </section>

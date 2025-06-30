@@ -7,9 +7,11 @@ type ButtonTypes = "primary" | "secondary";
 export function Button({
   type,
   children,
+  link,
 }: {
   type: ButtonTypes;
   children: string;
+  link: string;
 }) {
   const baseClass =
     geist.className +
@@ -20,6 +22,8 @@ export function Button({
   };
 
   return (
-    <button className={`${baseClass} ${variants[type]}`}>{children}</button>
+    <a href={link} className={`${baseClass} ${variants[type]}`}>
+      {children}
+    </a>
   );
 }

@@ -3,23 +3,15 @@ import { SquareArrowOutUpRight } from "lucide-react";
 interface BlurCardProps {
   image: string;
   title: string;
-  study?: string;
   github?: string;
   demo?: string;
   grid: number;
 }
 
-export function BlurCard({
-  image,
-  title,
-  study,
-  grid,
-  github,
-  demo,
-}: BlurCardProps) {
+export function BlurCard({ image, title, grid, github, demo }: BlurCardProps) {
   return (
     <div
-      className={`group relative col-span-${grid} flex items-end justify-start overflow-hidden rounded-lg border border-red-500`}
+      className={`group relative col-span-${grid} flex items-end justify-start overflow-hidden rounded-lg`}
     >
       {/* imagem de fundo */}
       <div
@@ -43,10 +35,6 @@ export function BlurCard({
         <div className="flex gap-2">
           {[
             {
-              href: study,
-              text: "Estudo de caso",
-            },
-            {
               href: github,
               text: "Github",
             },
@@ -59,6 +47,8 @@ export function BlurCard({
               key={index}
               href={link.href}
               className="group hover:text-main-opacity text-main flex cursor-pointer items-center gap-1 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {link.text} <SquareArrowOutUpRight className="inline size-4" />
             </a>

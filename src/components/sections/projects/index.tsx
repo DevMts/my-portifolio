@@ -36,6 +36,8 @@ function ProjectCard({ image, title, links }: ProjectCardProps) {
               key={index}
               href={link.href}
               className="group hover:text-main-opacity text-main flex items-center gap-1 transition-colors duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {link.text} <SquareArrowOutUpRight className="inline size-4" />
             </a>
@@ -69,7 +71,12 @@ export function Projects() {
           />
           <span className={`z-10 text-white`}>Em construção</span>
         </div>
-        <BlurCard image="/fiveCapa.png" title="Five - Landing Page" grid={2} />
+        <BlurCard
+          image="/fiveCapa.png"
+          title="Five - Landing Page"
+          grid={2}
+          demo="https://landing-page-meditation.vercel.app/"
+        />
 
         <div className="relative col-span-2 row-start-2 flex items-end justify-center rounded-lg border border-white p-9">
           <Image
@@ -90,14 +97,10 @@ export function Projects() {
           links={[
             {
               href: "",
-              text: "Estudo de caso",
-            },
-            {
-              href: "",
               text: "Github",
             },
             {
-              href: "",
+              href: "https://landing-page-meditation.vercel.app/",
               text: "Prévia",
             },
           ]}
