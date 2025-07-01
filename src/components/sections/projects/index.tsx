@@ -51,7 +51,7 @@ function ProjectCard({ image, title, links }: ProjectCardProps) {
 
 export function Projects() {
   return (
-    <Container className={`relative mt-2 py-20 lg:mt-10`} size id="projects">
+    <Container className={`relative`} size id="projects">
       `
       <Image
         src={blob}

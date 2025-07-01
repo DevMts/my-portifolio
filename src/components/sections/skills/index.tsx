@@ -126,7 +126,7 @@ const lato = Lato({ weight: "400", subsets: ["latin"] });
 
 export function Skills() {
   return (
-    <Container className={`mt-18 lg:mt-50`} size id="skills">
+    <Container size id="skills">
       <h1
         className={`${geist.className} mb-6 text-center text-2xl font-semibold text-white lg:mb-25 lg:text-5xl`}
       >

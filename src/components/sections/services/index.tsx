@@ -55,7 +55,7 @@ const services = [
 
 export function Services() {
   return (
-    <Container className={`relative mt-2 lg:mt-10`} size id="services">
+    <Container className={`relative`} size id="services">
       <Image
         src={blob}
         unoptimized
