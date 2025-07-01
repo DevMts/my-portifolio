@@ -5,6 +5,7 @@ import { Geist, Lato } from "next/font/google";
 import Image, { StaticImageData } from "next/image";
 import { BlurCard } from "@/components/blueCard";
 import { SquareArrowOutUpRight } from "lucide-react";
+import blob from "@/assets/blob1.svg";
 
 const geist = Geist({ subsets: ["latin"] });
 const lato = Lato({ weight: "400", subsets: ["latin"] });
@@ -50,7 +51,14 @@ function ProjectCard({ image, title, links }: ProjectCardProps) {
 
 export function Projects() {
   return (
-    <Container className={`mt-2 py-20 lg:mt-10`} size id="projects">
+    <Container className={`relative mt-2 py-20 lg:mt-10`} size id="projects">
+      `
+      <Image
+        src={blob}
+        unoptimized
+        alt="blob"
+        className="absolute top-1/2 -left-50 -z-10 hidden blur-[120px] lg:block"
+      />
       <h1
         className={`${geist.className} text-center text-2xl/[130%] font-semibold text-white lg:text-5xl`}
       >
@@ -61,9 +69,8 @@ export function Projects() {
       >
         “Passe o mouse sobre os cards”
       </p>
-
       <article className="mt-10 hidden h-163 grid-cols-3 grid-rows-2 gap-5 md:grid">
-        <div className="relative flex items-end justify-center rounded-lg border border-white p-9">
+        <div className="relative flex items-end justify-center rounded-lg border border-white bg-black p-9">
           <Image
             src={constructor}
             unoptimized
@@ -80,7 +87,7 @@ export function Projects() {
           github="https://github.com/DevMts/landing-page-meditation"
         />
 
-        <div className="relative col-span-2 row-start-2 flex items-end justify-center rounded-lg border border-white p-9">
+        <div className="relative col-span-2 row-start-2 flex items-end justify-center rounded-lg border border-white bg-black p-9">
           <Image
             src={constructor}
             unoptimized

@@ -4,9 +4,11 @@ import { Card } from "@/components/ui/card";
 import { Geist, Lato } from "next/font/google";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import blob from "@/assets/blob2.svg";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import Image from "next/image";
 
 const geist = Geist({ subsets: ["latin"] });
 const lato = Lato({ weight: "400", subsets: ["latin"] });
@@ -53,7 +55,13 @@ const services = [
 
 export function Services() {
   return (
-    <Container className={`mt-2 lg:mt-10`} size id="services">
+    <Container className={`relative mt-2 lg:mt-10`} size id="services">
+      <Image
+        src={blob}
+        unoptimized
+        alt="blob"
+        className="absolute -top-70 -right-40 -z-10 hidden blur lg:block"
+      />
       <h1
         className={`${geist.className} text-left text-2xl font-semibold text-white lg:text-5xl`}
       >

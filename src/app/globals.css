@@ -27,11 +27,7 @@ body {
 
 html {
   scroll-behavior: smooth;
-}
-.hover-blur-progressive:hover {
-  @apply absolute inset-0 backdrop-blur-md;
-  mask-image: linear-gradient(to bottom, black, transparent);
-  -webkit-mask-image: linear-gradient(to bottom, black, transparent);
+  scroll-padding-top: 6.25rem;
 }
 
 :root {
