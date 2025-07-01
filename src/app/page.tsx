@@ -1,4 +1,5 @@
 import { NavBar } from "@/components/NavBar";
+import { About } from "@/components/sections/about";
 import { Hero } from "@/components/sections/hero";
 import { Projects } from "@/components/sections/projects";
 import { Services } from "@/components/sections/services";
@@ -12,6 +13,7 @@ export default function Home() {
       <Projects />
       <Services />
       <Skills />
+      <About />
     </>
   );
 }
