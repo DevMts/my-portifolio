@@ -39,7 +39,7 @@ export default function RootLayout({
           }
         `}</style>
       </head>
-      <body className={`bg-black antialiased`}>
+      <body className={`overflow-x-hidden bg-black antialiased`}>
         {/* Loader que aparece antes da hidratação */}
         <div id="global-loader">
           <div className="loader"></div>

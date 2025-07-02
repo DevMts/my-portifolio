@@ -80,7 +80,7 @@ export function Projects() {
           <span className={`z-10 text-white`}>Em construção</span>
         </div>
         <BlurCard
-          image="/fiveCapa.png"
+          image="/images/fiveCapa.png"
           title="Five - Landing Page"
           grid={2}
           demo="https://landing-page-meditation.vercel.app/"
