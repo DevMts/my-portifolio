@@ -32,24 +32,24 @@ export function About() {
         <p
           className={`${lato.className} text-primary text-left text-base/[130%] font-medium md:w-1/2 lg:text-xl/[130%]`}
         >
-          Movido por uma curiosidade insaciável, meu trabalho é ser um tradutor
-          entre dois mundos: o da lógica fria e precisa do código e o das
-          experiências quentes e humanas. Desde o início da minha jornada,
-          percebi que a excelência técnica por si só era vazia. De que adianta
-          um código perfeito se ele não servir às pessoas de forma intuitiva e
-          agradável?
+          Minha paixão pela tecnologia nasce da curiosidade: uma vontade de
+          entender profundamente como as coisas funcionam para, então, criar
+          soluções que realmente ajudem as pessoas no seu dia a dia.
           <br />
           <br />
-          Essa pergunta guia meu processo até hoje. Para mim, por trás de cada
-          clique e cada tela, existe uma pessoa buscando simplicidade. Por isso,
-          dedico-me a entender não apenas a estrutura, mas o sentimento que a
-          tecnologia provoca. Eu uno a precisão do desenvolvimento front-end à
-          empatia profunda do UI/UX design, pois acredito que é nessa fusão que
-          a verdadeira magia acontece.
+          Minha jornada na tecnologia começou com o desenvolvimento, durante o
+          curso técnico no Instituto Federal (IF), onde rapidamente me apaixonei
+          pelo universo do front-end. Com o tempo, percebi que um bom código não
+          era o suficiente: eu sentia a necessidade de criar interfaces que
+          fossem não apenas funcionais, mas também intuitivas e visualmente
+          agradáveis. Foi essa busca pela excelência que me levou a mergulhar no
+          mundo do UI/UX Design. Desde então, venho me aprimorando
+          constantemente nas duas áreas.
           <br />
           <br />
-          Meu objetivo final será sempre o mesmo: absorver a complexidade para
-          entregar elegância e poder ao usuário.
+          Quando não estou codando ou desenhando, você pode me encontrar
+          resolvendo problemas de matemática, andando de bicicleta ou explorando
+          algum jogo novo.
         </p>
       </div>
     </Container>
