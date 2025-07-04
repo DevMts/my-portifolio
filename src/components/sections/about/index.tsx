@@ -13,7 +13,7 @@ export function About() {
       <Image
         src={blob}
         unoptimized
-        alt="blob"
+        alt=""
         className="absolute top-1/2 left-1/2 -z-10 hidden -translate-x-1/2 -translate-y-1/2 blur-[120px] lg:block"
       />
       <h1
@@ -25,7 +25,7 @@ export function About() {
         <figure className="hidden h-120 w-90 overflow-hidden md:block">
           <Image
             src={my}
-            alt="my"
+            alt="Foto do Mateus Carvalho"
             className="hidden w-full object-cover md:block"
           />
         </figure>

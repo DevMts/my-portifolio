@@ -133,7 +133,7 @@ export function Skills() {
         Minhas Habilidades
       </h1>
       <article className="relative mx-auto flex w-9/10 flex-wrap justify-center gap-3 p-5">
-        <Image src={arco} alt="arco" className="hidden w-full lg:block" />
+        <Image src={arco} alt="" className="hidden w-full lg:block" />
         {skill.map((s) => (
           <div
             key={s.name}
@@ -146,7 +146,11 @@ export function Skills() {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger>
-                  <Image src={s.image} alt={s.name} className="w-full" />
+                  <Image
+                    src={s.image}
+                    alt={s.name + " logo"}
+                    className="w-full"
+                  />
                 </TooltipTrigger>
                 <TooltipContent>
                   <span className={` ${lato.className}`}>{s.name}</span>

@@ -57,7 +57,7 @@ export function Projects() {
       <Image
         src={blob}
         unoptimized
-        alt="blob"
+        alt=""
         className="absolute top-1/2 -left-50 -z-10 hidden blur-[120px] lg:block"
       />
       <h1
@@ -75,7 +75,7 @@ export function Projects() {
           <Image
             src={constructor}
             unoptimized
-            alt="constructor"
+            alt="Animação de construção representando que o projeto está em construção"
             className="absolute top-1/2 left-1/2 w-105 -translate-x-1/2 -translate-y-1/2 object-cover"
           />
           <span className={`z-10 text-white`}>Em construção</span>
@@ -92,7 +92,7 @@ export function Projects() {
           <Image
             src={constructor}
             unoptimized
-            alt="constructor"
+            alt="Animação de construção representando que o projeto está em construção"
             className="absolute top-1/2 left-1/2 h-full w-105 -translate-x-1/2 -translate-y-1/2 border border-t-white object-cover"
           />
           <span className={`z-10 text-white`}>Em construção</span>

@@ -48,7 +48,7 @@ export function NavBar() {
       <div className="flex h-full w-full items-center justify-between">
         <Image
           src={oak}
-          alt="logo"
+          alt="Logo Oak na barra de navegação"
           className="h-full w-16 md:w-18.75"
           priority
         />
@@ -86,7 +86,6 @@ export function NavBar() {
               key={item.name}
               href={item.href}
               className={`${geist.className} hover:text-main-opacity flex w-fit items-center gap-4 p-1 pl-0 text-xl text-white transition-all duration-200`}
-
             >
               {item.name}
               {index !== 5 && (
@@ -97,7 +96,11 @@ export function NavBar() {
         </nav>
 
         {/* Botão hamburguer (mobile) */}
-        <button onClick={handleClick} className="background size-6 lg:hidden" aria-label="Abrir menu">
+        <button
+          onClick={handleClick}
+          className="background size-6 lg:hidden"
+          aria-label="Abrir menu"
+        >
           <div className="relative flex size-full flex-col items-end justify-center gap-1">
             <span
               className={`bg-main h-0.5 w-2/4 rounded transition-all duration-200 ${isMenuOpen && "absolute w-full rotate-45"} `}

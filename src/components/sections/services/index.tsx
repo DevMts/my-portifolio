@@ -59,7 +59,7 @@ export function Services() {
       <Image
         src={blob}
         unoptimized
-        alt="blob"
+        alt=""
         className="absolute -top-70 -right-40 -z-10 hidden blur lg:block"
       />
       <h1
