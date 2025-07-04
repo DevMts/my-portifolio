@@ -29,6 +29,9 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 6.25rem;
 }
+#home {
+  scroll-margin-top: 0;
+}
 
 :root {
   --main: oklch(0.97 0 0);

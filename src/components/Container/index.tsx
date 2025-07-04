@@ -9,7 +9,7 @@ export function Container({ children, className, size, id }: ContainerProps) {
   return (
     <section
       id={id}
-      className={`${className} mx-auto max-w-9/10 ${size && "lg:max-w-5xl"} mt-10 lg:mt-20`}
+      className={`${className} mx-auto max-w-9/10 ${size && "lg:max-w-5xl"} mt-15 ${size ? "lg:mt-25" : "lg:mt-10"} `}
     >
       {children}
     </section>

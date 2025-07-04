@@ -6,6 +6,7 @@ import Image, { StaticImageData } from "next/image";
 import { BlurCard } from "@/components/blueCard";
 import { SquareArrowOutUpRight } from "lucide-react";
 import blob from "@/assets/blob1.svg";
+import weather from "@/assets/weather.webp";
 
 const geist = Geist({ subsets: ["latin"] });
 const lato = Lato({ weight: "400", subsets: ["latin"] });
@@ -96,9 +97,13 @@ export function Projects() {
           />
           <span className={`z-10 text-white`}>Em construção</span>
         </div>
-        <div className="col-start-3 row-start-2 rounded-lg border border-white">
-          4
-        </div>
+        <BlurCard
+          image="/images/weather.webp"
+          title="Weather App"
+          grid={1}
+          demo="https://devmtsweather.vercel.app/"
+          github="https://github.com/DevMts/WeatherApp"
+        />
       </article>
       <article className="mt-5 flex flex-col gap-10 md:mt-10 md:hidden">
         <ProjectCard
@@ -106,11 +111,25 @@ export function Projects() {
           title="Five - Landing Page"
           links={[
             {
-              href: "",
+              href: "https://github.com/DevMts/landing-page-meditation",
               text: "Github",
             },
             {
               href: "https://landing-page-meditation.vercel.app/",
+              text: "Prévia",
+            },
+          ]}
+        />
+        <ProjectCard
+          image={weather}
+          title="Weather App"
+          links={[
+            {
+              href: "https://github.com/DevMts/WeatherApp",
+              text: "Github",
+            },
+            {
+              href: "https://devmtsweather.vercel.app/",
               text: "Prévia",
             },
           ]}

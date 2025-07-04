@@ -28,13 +28,13 @@ export function Hero() {
     console.log("All letters have animated!");
   };
   return (
-    <section className="relative h-[100svh] min-h-150 overflow-hidden">
+    <section
+      className="relative h-[100svh] min-h-150 overflow-hidden"
+      id="home"
+    >
       <div id="box" className="absolute inset-0 -z-10" />
 
-      <Container
-        className="z-10 flex h-full max-w-7xl flex-col items-center justify-center"
-        id="home"
-      >
+      <Container className="z-10 flex h-full max-w-7xl flex-col items-center justify-center">
         <SplitText
           key={1}
           text="Front-End"

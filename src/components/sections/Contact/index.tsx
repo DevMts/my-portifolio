@@ -76,7 +76,7 @@ export function Contact() {
       <h1
         className={`${geist.className} text-center text-2xl font-semibold text-white lg:text-5xl`}
       >
-        Vamos criar algo incrível junto
+        Vamos criar algo incrível juntos
       </h1>
 
       <article className="bg-details mt-16 flex w-full justify-between rounded-lg px-7 lg:px-13">
