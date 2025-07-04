@@ -22,7 +22,7 @@ function ServicesCard({ title, description }: ServicesCardProps) {
   return (
     <Card
       variant="shine"
-      className="justify-beetween mb-10 flex flex-col items-start gap-4 md:col-span-1 md:mb-0"
+      className="justify-beetween mx-auto mb-10 flex flex-col items-start gap-4 md:col-span-1 md:mb-0"
     >
       <h2
         className={`${geist.className} min-h-15.5 max-w-4/6 bg-gradient-to-b from-[#e6e6e6] to-[#c5c5c5] bg-clip-text text-left text-xl/[130%] font-semibold text-transparent md:max-w-9/10 lg:text-2xl`}

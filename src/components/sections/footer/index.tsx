@@ -11,13 +11,13 @@ export function Footer() {
     <footer className="bg-details mt-25 h-100">
       <Container
         size
-        className="flex h-full flex-col items-start justify-between pl-5 md:flex-row md:items-center"
+        className="flex h-full flex-col items-center justify-between md:flex-row md:items-center"
       >
-        <article className="flex h-full flex-col items-start justify-start gap-8 py-7.5 md:w-1/2 md:justify-between">
+        <article className="flex h-full flex-col items-center justify-start gap-8 py-7.5 md:w-1/2 md:items-start md:justify-between">
           <Image src={logo} alt="logo" className="w-25 md:w-30" />
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <strong
-              className={`${geist.className} text-primary text-left text-xl font-semibold`}
+              className={`${geist.className} text-primary text-center text-xl font-semibold md:text-left`}
             >
               Onde me encontrar
             </strong>
